@@ -201,6 +201,7 @@
       <div class="ltog"><input type="checkbox" id="mRDKBProp"><div class="ldot" style="background:#00805A"></div><span>RDKB Property Search</span></div>
       <div class="ltog"><input type="checkbox" id="mRDKBParcels"><div class="ldot" style="background:#0066CC"></div><span>RDKB PMBC Parcels</span></div>
       <div class="ltog"><input type="checkbox" id="mRDKBAddr"><div class="ldot" style="background:#F4B400"></div><span>RDKB Address Points</span></div>
+      <div id="mLiveOverlays"></div>
       <p class="hint">These toggles control map overlays only.</p>
     </div>
 
@@ -269,8 +270,11 @@
       <div class="ltog"><input type="checkbox" id="lRoads" checked><div class="ldot" style="background:#666"></div><span>Road Labels</span></div>
       <div class="ltog"><input type="checkbox" id="lParcelsWMS"><div class="ldot" style="background:#FF6200"></div><span>ParcelMap BC (WMS)</span></div>
       <div class="ltog"><input type="checkbox" id="lRDCK"><div class="ldot" style="background:#4D148C"></div><span>RDCK property lines (saved)</span></div>
+      <div class="ltog"><input type="checkbox" id="lSavedRDCKPoints" checked><div class="ldot" style="background:#F4B400"></div><span>Saved RDCK address points</span></div>
       <div class="ltog"><input type="checkbox" id="lRDKBProp"><div class="ldot" style="background:#00805A"></div><span>RDKB Property Search</span></div>
       <div class="ltog"><input type="checkbox" id="lRDKBParcels"><div class="ldot" style="background:#0066CC"></div><span>RDKB PMBC Parcels</span></div>
+      <div class="ltog"><input type="checkbox" id="lRDKBAddr"><div class="ldot" style="background:#F4B400"></div><span>RDKB Address Points</span></div>
+      <div id="lLiveOverlays"></div>
     </div>
     <div class="psec">
       <h3>Quick Navigate</h3>
@@ -532,6 +536,110 @@ function ensureMapPanes(targetMap) {
     labelPane.style.zIndex = 650;
     labelPane.style.pointerEvents = 'none';
   }
+  if (!targetMap.getPane('regionalLivePane')) {
+    const pane = targetMap.createPane('regionalLivePane');
+    pane.style.zIndex = 350;
+    pane.style.pointerEvents = 'none';
+  }
+}
+
+// These menus only contact a service when opened or when a live layer is enabled.
+function initRegionalOverlayPanel(container, targetMap) {
+  if (!container || container.dataset.initialized) return;
+  container.dataset.initialized = 'true';
+  const heading = document.createElement('details');
+  const summary = document.createElement('summary');
+  summary.textContent = 'More regional overlays (live)';
+  heading.appendChild(summary);
+  const hint = document.createElement('p');
+  hint.className = 'hint';
+  hint.textContent = 'Choose layers from the regional services. Some appear only at certain zoom levels. These are live, not saved.';
+  heading.appendChild(hint);
+  const sources = [
+    {label:'RDCK public map', url:RDCK_BASE},
+    {label:'RDCK imagery collection', url:RDCK_IMAGERY},
+    {label:'RDKB base layers', url:RDKB_BASE_EXT}
+  ];
+  for (const source of sources) {
+    const section = document.createElement('details');
+    const title = document.createElement('summary');
+    title.textContent = source.label;
+    section.appendChild(title);
+    const status = document.createElement('div');
+    status.className = 'hint';
+    status.textContent = 'Open to load available layers.';
+    section.appendChild(status);
+    let loaded = false, loading = false, overlay = null;
+    const selected = new Set();
+    const applySelection = () => {
+      const ids = [...selected].sort((a,b) => a-b);
+      if (!ids.length) {
+        if (overlay) targetMap.removeLayer(overlay);
+        status.textContent = 'No live layers selected.';
+        return;
+      }
+      if (!overlay) {
+        overlay = L.esri.dynamicMapLayer({url:source.url, layers:ids, opacity:0.8,
+          format:'png32', transparent:true, pane:'regionalLivePane', maxZoom:MAP_MAX_ZOOM});
+        overlay.on('error', () => { status.textContent = 'The regional service could not draw this overlay.'; });
+      } else {
+        overlay.setLayers(ids);
+      }
+      if (!targetMap.hasLayer(overlay)) overlay.addTo(targetMap);
+      status.textContent = `${ids.length} live sublayer${ids.length === 1 ? '' : 's'} selected; visibility may depend on zoom.`;
+    };
+    section.addEventListener('toggle', async () => {
+      if (!section.open || loaded || loading) return;
+      loading = true;
+      status.textContent = 'Loading available layers…';
+      try {
+        const response = await _f(`${source.url}?f=json`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const metadata = await response.json();
+        if (!Array.isArray(metadata.layers)) throw new Error('Layer list unavailable');
+        const layers = metadata.layers;
+        const children = new Map();
+        for (const item of layers) {
+          if (!children.has(item.parentLayerId)) children.set(item.parentLayerId, []);
+          children.get(item.parentLayerId).push(item);
+        }
+        const renderLayer = (item, parent) => {
+          const descendants = children.get(item.id) || [];
+          if (descendants.length) {
+            const group = document.createElement('details');
+            group.style.marginLeft = '10px';
+            const label = document.createElement('summary');
+            label.textContent = item.name;
+            group.appendChild(label);
+            descendants.forEach(child => renderLayer(child, group));
+            parent.appendChild(group);
+          } else {
+            const label = document.createElement('label');
+            label.className = 'ltog';
+            label.style.marginLeft = '10px';
+            const input = document.createElement('input');
+            input.type = 'checkbox';
+            input.dataset.layerId = String(item.id);
+            const name = document.createElement('span');
+            name.textContent = item.name === 'Default' ? 'Show labels' : item.name;
+            label.append(input, name);
+            input.addEventListener('change', () => {
+              if (input.checked) selected.add(item.id); else selected.delete(item.id);
+              applySelection();
+            });
+            parent.appendChild(label);
+          }
+        };
+        (children.get(-1) || []).forEach(item => renderLayer(item, section));
+        loaded = true;
+        status.textContent = 'No live layers selected.';
+      } catch (error) {
+        status.textContent = `Could not load ${source.label}: ${error.message}. Close and reopen to retry.`;
+      } finally { loading = false; }
+    });
+    heading.appendChild(section);
+  }
+  container.appendChild(heading);
 }
 
 const rdckImageryCoverageCache = new Map();
@@ -819,6 +927,7 @@ function makeAddressDisplay(parts = {}) {
 // MAP SETUP (Tab 1 — Address Resolver)
 // ══════════════════════════════════════
 const map = L.map('map', { updateWhenIdle:true, preferCanvas:true, maxZoom:MAP_MAX_ZOOM }).setView(CENTER, MAP_DEFAULT_ZOOM);
+initRegionalOverlayPanel(document.getElementById('mLiveOverlays'), map);
 ensureMapPanes(map);
 const mainSat = L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom:MAP_MAX_ZOOM, maxNativeZoom:TILE_NATIVE_MAX_ZOOM, attribution:'Esri', updateWhenIdle:true, keepBuffer:1}).addTo(map);
 const mainRoadTransport = L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}', {maxZoom:MAP_MAX_ZOOM, maxNativeZoom:TILE_NATIVE_MAX_ZOOM, opacity:.7, updateWhenIdle:true, keepBuffer:1, pane:'mapLabelPane'});
@@ -1719,17 +1828,18 @@ let localDerivedLoadPromise = null;
 let localAutocompleteDisabledReason = '';
 
 // Show the saved RDCK snapshot locally at address-level zoom, without querying RDCK.
-const savedRDCKPointToggle = document.getElementById('mSavedRDCKPoints');
-const savedRDCKPointLayer = L.layerGroup().addTo(map);
-let savedRDCKRenderGeneration = 0;
-async function renderSavedRDCKPoints() {
+function initSavedRDCKPoints(targetMap, toggleId) {
+ const savedRDCKPointToggle = document.getElementById(toggleId);
+ const savedRDCKPointLayer = L.layerGroup().addTo(targetMap);
+ let savedRDCKRenderGeneration = 0;
+ async function renderSavedRDCKPoints() {
   const generation = ++savedRDCKRenderGeneration;
   savedRDCKPointLayer.clearLayers();
-  if (!savedRDCKPointToggle.checked || map.getZoom() < 15) return;
+  if (!savedRDCKPointToggle.checked || targetMap.getZoom() < 15) return;
   try {
     const rows = await ensureLocalAutocompleteRows();
-    if (generation !== savedRDCKRenderGeneration || !savedRDCKPointToggle.checked || map.getZoom() < 15) return;
-    const bounds = map.getBounds();
+    if (generation !== savedRDCKRenderGeneration || !savedRDCKPointToggle.checked || targetMap.getZoom() < 15) return;
+    const bounds = targetMap.getBounds();
     for (const row of rows) {
       if (row.kind !== 'rdck' || row.rawSource !== 'localCache' || !Number.isFinite(row.lat) || !Number.isFinite(row.lon) || !bounds.contains([row.lat, row.lon])) continue;
       L.circleMarker([row.lat, row.lon], {
@@ -1742,10 +1852,12 @@ async function renderSavedRDCKPoints() {
   } catch (err) {
     alog('Saved RDCK address points unavailable: ' + err.message, 'err');
   }
+ }
+ savedRDCKPointToggle.addEventListener('change', renderSavedRDCKPoints);
+ targetMap.on('moveend', renderSavedRDCKPoints);
+ renderSavedRDCKPoints();
 }
-savedRDCKPointToggle.addEventListener('change', renderSavedRDCKPoints);
-map.on('moveend', renderSavedRDCKPoints);
-renderSavedRDCKPoints();
+initSavedRDCKPoints(map, 'mSavedRDCKPoints');
 
 const RDCK_LOCALITY_HINTS = ['CASTLEGAR', 'NELSON', 'CRESTON', 'SALMO', 'KASLO', 'SLOCAN', 'SLOCAN PARK', 'SLOCAN VALLEY', 'NAKUSP', 'NEW DENVER', 'SILVERTON', 'CRAWFORD BAY', 'BALFOUR', 'BLUEBERRY', 'ROBSON', 'THRUMS', 'SHOREACRES', 'WINLAW', 'KASLO'];
 const RDKB_LOCALITY_HINTS = ['TRAIL', 'ROSSLAND', 'GENELLE', 'JANELLE', 'GRAND FORKS', 'CHRISTINA LAKE', 'GREENWOOD', 'MIDWAY', 'FRUITVALE', 'WARFIELD', 'MONTROSE', 'CASCADE', 'BEAVERDELL', 'WESTBRIDGE', 'ROCK CREEK'];
@@ -3185,7 +3297,7 @@ async function queryParcelAtPoint(lat, lng) {
 // ══════════════════════════════════════
 // TAB 2: MAP EXPLORER
 // ══════════════════════════════════════
-let expMap, expSat, expRoads, expParcelsWMS, expRDCK, expRDKBProperty, expRDKBParcels;
+let expMap, expSat, expRoads, expParcelsWMS, expRDCK, expRDKBProperty, expRDKBParcels, expRDKBAddressPoints;
 
 function renderInfoSection(title, rows) {
   return `<div style="margin-bottom:10px"><div style="font-weight:700;color:var(--fdx-purple);margin-bottom:4px">${esc(title)}</div>${rows.map(([l,v])=>`<div class="rr"><span class="rl">${esc(l)}</span><span class="rv">${esc(String(v||'—'))}</span></div>`).join('')}</div>`;
@@ -3365,6 +3477,8 @@ function initExpMap() {
   if (expMap) return;
   expMap = L.map('expMap', { preferCanvas:true, maxZoom:MAP_MAX_ZOOM }).setView(CENTER, MAP_DEFAULT_ZOOM);
   ensureMapPanes(expMap);
+  initRegionalOverlayPanel(document.getElementById('lLiveOverlays'), expMap);
+  initSavedRDCKPoints(expMap, 'lSavedRDCKPoints');
   expSat = L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:MAP_MAX_ZOOM,maxNativeZoom:TILE_NATIVE_MAX_ZOOM}).addTo(expMap);
   expRoads = L.layerGroup([
     L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}',{maxZoom:MAP_MAX_ZOOM,maxNativeZoom:TILE_NATIVE_MAX_ZOOM,opacity:.7,pane:'mapLabelPane'}),
@@ -3387,6 +3501,10 @@ function initExpMap() {
     expRDKBParcels = createLocalGeoJsonLayer('rdkb-parcels', 'RDKB PMBC Parcels', {
       style: () => ({color:'#0066CC', weight:1.2, fillColor:'#0066CC', fillOpacity:0}),
       onEachFeature: (feature, layer) => layer.bindPopup(() => rdkbParcelPopup(feature.properties || {}))
+    });
+    expRDKBAddressPoints = createLocalGeoJsonLayer('rdkb-address-points', 'RDKB Address Points', {
+      pointToLayer: (feature, latlng) => L.circleMarker(latlng, {radius:4, color:'#6B4F00', weight:1, fillColor:'#F4B400', fillOpacity:.95}),
+      onEachFeature: (feature, layer) => layer.bindPopup(() => rdkbAddressPopup(feature.properties || {}))
     });
   } else {
     try { expRDKBProperty = L.esri.dynamicMapLayer({url:RDKB_PROPERTY_ROOT,opacity:.45,maxZoom:MAP_MAX_ZOOM}); } catch(e){}
@@ -3424,6 +3542,11 @@ function initExpMap() {
     } else {
       expMap.removeLayer(expRDKBParcels);
     }
+  });
+  document.getElementById('lRDKBAddr').addEventListener('change',e=>{
+    if (!expRDKBAddressPoints) { toast('Saved RDKB address points unavailable'); e.target.checked=false; return; }
+    if (e.target.checked) { expRDKBAddressPoints.addTo(expMap); maybeLoadLocalLayer(expRDKBAddressPoints); }
+    else expMap.removeLayer(expRDKBAddressPoints);
   });
 
   // Click to query parcel
