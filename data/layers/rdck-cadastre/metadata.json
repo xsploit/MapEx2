@@ -1,0 +1,769 @@
+{
+  "layerKey": "rdck-cadastre",
+  "label": "RDCK Cadastre - Property Lines",
+  "url": "https://maps.rdck.bc.ca/server2/rest/services/RDCK_Public_Web_Map_Service_MIL/MapServer/25",
+  "exportedAt": "2026-11-05T21:42:42.786463+00:00",
+  "availableCount": 61643,
+  "exportedCount": 61643,
+  "objectIdField": "OBJECTID",
+  "geometryType": "esriGeometryPolygon",
+  "sourceType": "arcgis",
+  "outputFormat": "geojson",
+  "precision": 6,
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "domain": null
+    },
+    {
+      "name": "Folio",
+      "type": "esriFieldTypeString",
+      "alias": "Folio",
+      "length": 15,
+      "domain": null
+    },
+    {
+      "name": "PID",
+      "type": "esriFieldTypeString",
+      "alias": "PID",
+      "length": 12,
+      "domain": null
+    },
+    {
+      "name": "PlanLink",
+      "type": "esriFieldTypeString",
+      "alias": "PlanLink",
+      "length": 75,
+      "domain": null
+    },
+    {
+      "name": "GISLink",
+      "type": "esriFieldTypeString",
+      "alias": "GISLink",
+      "length": 9,
+      "domain": null
+    },
+    {
+      "name": "T_folio",
+      "type": "esriFieldTypeString",
+      "alias": "T_folio",
+      "length": 16,
+      "domain": null
+    },
+    {
+      "name": "T_pid",
+      "type": "esriFieldTypeString",
+      "alias": "T_pid",
+      "length": 11,
+      "domain": null
+    },
+    {
+      "name": "Site_Address",
+      "type": "esriFieldTypeString",
+      "alias": "Site_Address",
+      "length": 114,
+      "domain": null
+    },
+    {
+      "name": "Actual_Use_Code",
+      "type": "esriFieldTypeString",
+      "alias": "Actual_Use_Code",
+      "length": 30,
+      "domain": null
+    },
+    {
+      "name": "Actual_Use",
+      "type": "esriFieldTypeString",
+      "alias": "Actual_Use",
+      "length": 100,
+      "domain": null
+    },
+    {
+      "name": "Plan_Number",
+      "type": "esriFieldTypeString",
+      "alias": "Plan_Number",
+      "length": 20,
+      "domain": null
+    },
+    {
+      "name": "LTO_Number",
+      "type": "esriFieldTypeString",
+      "alias": "LTO_Number",
+      "length": 16,
+      "domain": null
+    },
+    {
+      "name": "Lot",
+      "type": "esriFieldTypeString",
+      "alias": "Lot",
+      "length": 10,
+      "domain": null
+    },
+    {
+      "name": "Block",
+      "type": "esriFieldTypeString",
+      "alias": "Block",
+      "length": 20,
+      "domain": null
+    },
+    {
+      "name": "District_Lot",
+      "type": "esriFieldTypeString",
+      "alias": "District_Lot",
+      "length": 20,
+      "domain": null
+    },
+    {
+      "name": "Land_District",
+      "type": "esriFieldTypeString",
+      "alias": "Land_District",
+      "length": 20,
+      "domain": null
+    },
+    {
+      "name": "Legal_Long",
+      "type": "esriFieldTypeString",
+      "alias": "Legal_Long",
+      "length": 250,
+      "domain": null
+    },
+    {
+      "name": "Lot_Size",
+      "type": "esriFieldTypeString",
+      "alias": "Lot_Size",
+      "length": 14,
+      "domain": null
+    },
+    {
+      "name": "Lot_Description",
+      "type": "esriFieldTypeString",
+      "alias": "Lot_Description",
+      "length": 20,
+      "domain": null
+    },
+    {
+      "name": "Legal_Type",
+      "type": "esriFieldTypeString",
+      "alias": "Legal_Type",
+      "length": 20,
+      "domain": null
+    },
+    {
+      "name": "Shape",
+      "type": "esriFieldTypeGeometry",
+      "alias": "Shape",
+      "domain": null
+    },
+    {
+      "name": "Last_Edited_Date",
+      "type": "esriFieldTypeDate",
+      "alias": "Last Edited Date",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "Shape.STArea()",
+      "type": "esriFieldTypeDouble",
+      "alias": "Shape.STArea()",
+      "domain": null
+    },
+    {
+      "name": "Shape.STLength()",
+      "type": "esriFieldTypeDouble",
+      "alias": "Shape.STLength()",
+      "domain": null
+    },
+    {
+      "name": "house_nbr",
+      "type": "esriFieldTypeString",
+      "alias": "House Number",
+      "length": 4000,
+      "domain": null
+    },
+    {
+      "name": "street",
+      "type": "esriFieldTypeString",
+      "alias": "Street",
+      "length": 255,
+      "domain": null
+    },
+    {
+      "name": "City",
+      "type": "esriFieldTypeString",
+      "alias": "Community",
+      "length": 255,
+      "domain": null
+    },
+    {
+      "name": "Assess_Year",
+      "type": "esriFieldTypeDouble",
+      "alias": "Assessment Year",
+      "domain": null
+    },
+    {
+      "name": "Gen_Impr_Gross",
+      "type": "esriFieldTypeDouble",
+      "alias": "General Improvement Value Gross",
+      "domain": null
+    },
+    {
+      "name": "Gen_Land_Gross",
+      "type": "esriFieldTypeDouble",
+      "alias": "General Land Value Gross",
+      "domain": null
+    },
+    {
+      "name": "GlobalID",
+      "type": "esriFieldTypeGlobalID",
+      "alias": "GlobalID",
+      "length": 38,
+      "domain": null
+    },
+    {
+      "name": "created_user",
+      "type": "esriFieldTypeString",
+      "alias": "created_user",
+      "length": 255,
+      "domain": null
+    },
+    {
+      "name": "created_date",
+      "type": "esriFieldTypeDate",
+      "alias": "created_date",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "last_edited_user",
+      "type": "esriFieldTypeString",
+      "alias": "last_edited_user",
+      "length": 255,
+      "domain": null
+    },
+    {
+      "name": "TEMPEST_DATE_STAMP",
+      "type": "esriFieldTypeDate",
+      "alias": "TEMPEST_DATE_STAMP",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "Cadastre_last_edit_date",
+      "type": "esriFieldTypeDate",
+      "alias": "Cadastre_last_edit_date",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "Legal_ID",
+      "type": "esriFieldTypeString",
+      "alias": "Legal_ID",
+      "length": 26,
+      "domain": null
+    }
+  ],
+  "parts": [
+    {
+      "file": "part-0001.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0002.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0003.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0004.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0005.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0006.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0007.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0008.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0009.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0010.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0011.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0012.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0013.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0014.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0015.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0016.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0017.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0018.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0019.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0020.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0021.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0022.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0023.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0024.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0025.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0026.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0027.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0028.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0029.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0030.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0031.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0032.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0033.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0034.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0035.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0036.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0037.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0038.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0039.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0040.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0041.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0042.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0043.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0044.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0045.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0046.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0047.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0048.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0049.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0050.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0051.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0052.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0053.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0054.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0055.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0056.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0057.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0058.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0059.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0060.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0061.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0062.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0063.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0064.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0065.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0066.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0067.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0068.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0069.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0070.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0071.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0072.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0073.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0074.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0075.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0076.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0077.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0078.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0079.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0080.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0081.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0082.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0083.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0084.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0085.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0086.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0087.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0088.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0089.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0090.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0091.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0092.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0093.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0094.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0095.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0096.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0097.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0098.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0099.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0100.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0101.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0102.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0103.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0104.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0105.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0106.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0107.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0108.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0109.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0110.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0111.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0112.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0113.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0114.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0115.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0116.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0117.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0118.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0119.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0120.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0121.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0122.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0123.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0124.geojson",
+      "count": 143
+    }
+  ],
+  "note": "Current 2026-11-05T21:42:42.786463+00:00 plus unmatched historical 2026-03-31T09:59:58.878Z; historical features may be stale.",
+  "historicalExportedAt": "2026-03-31T09:59:58.878Z",
+  "currentSourceCount": 50811,
+  "historicalRetainedCount": 10832
+}

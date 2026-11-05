@@ -1,0 +1,13 @@
+{
+  "exportedAt": "2026-11-05T21:55:00.874879+00:00",
+  "counts": {
+    "rdck": 35337,
+    "rdkbTable": 32494,
+    "rdkbPoints": 12881,
+    "rdkbJoined": 32494
+  },
+  "warnings": [],
+  "notes": [
+    "RDCK current records and preserved historical records; RDKB current point records plus historical address search data."
+  ]
+}

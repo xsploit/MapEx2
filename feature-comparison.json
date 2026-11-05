@@ -1,0 +1,76 @@
+[
+  {
+    "layer": "rdck-address-points",
+    "identifier": "GlobalID",
+    "old": 35181,
+    "new": 31615,
+    "matching_id": 31459,
+    "only_new_id": 156,
+    "only_old_id": 3722,
+    "matching_ids_with_selected_field_changes": 149,
+    "fields_compared": [
+      "ADDRESS",
+      "SUITE",
+      "COMM",
+      "FOLIO"
+    ],
+    "matching_ids_with_serialized_geometry_difference_at_6_decimals": 72,
+    "geometry_note": "Serialized geometry differences can reflect coordinate rounding or ring order; they do not prove a boundary moved."
+  },
+  {
+    "layer": "rdkb-address-points",
+    "identifier": "OBJECTID_1",
+    "old": 12855,
+    "new": 12881,
+    "matching_id": 12853,
+    "only_new_id": 28,
+    "only_old_id": 2,
+    "matching_ids_with_selected_field_changes": 77,
+    "fields_compared": [
+      "FULL_ADDRESS",
+      "LOCALITY",
+      "Unit_Count"
+    ],
+    "matching_ids_with_serialized_geometry_difference_at_6_decimals": 1732,
+    "geometry_note": "Serialized geometry differences can reflect coordinate rounding or ring order; they do not prove a boundary moved."
+  },
+  {
+    "layer": "rdkb-parcels",
+    "identifier": "GlobalID",
+    "old": 33431,
+    "new": 33480,
+    "matching_id": 33356,
+    "only_new_id": 124,
+    "only_old_id": 75,
+    "matching_ids_with_selected_field_changes": 20,
+    "fields_compared": [
+      "PID",
+      "PlanNumber",
+      "ParcelStatus"
+    ],
+    "matching_ids_with_serialized_geometry_difference_at_6_decimals": 33356,
+    "geometry_note": "Serialized geometry differences can reflect coordinate rounding or ring order; they do not prove a boundary moved."
+  },
+  {
+    "layer": "rdkb-property-search",
+    "identifier": [
+      "PMBCParcelGUID",
+      "AddressID",
+      "Folio"
+    ],
+    "old": 37416,
+    "new": 37659,
+    "matching_id": 37312,
+    "only_new_id": 347,
+    "only_old_id": 104,
+    "matching_ids_with_selected_field_changes": 250,
+    "fields_compared": [
+      "PMBC_PID",
+      "FullAddress",
+      "apt_no",
+      "Folio"
+    ],
+    "matching_ids_with_serialized_geometry_difference_at_6_decimals": 37312,
+    "geometry_note": "Serialized geometry differences can reflect coordinate rounding or ring order; they do not prove a boundary moved."
+  }
+]

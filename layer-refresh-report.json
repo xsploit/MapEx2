@@ -1,0 +1,46 @@
+[
+  {
+    "layer": "rdck-address-points",
+    "old": 35181,
+    "current": 31615,
+    "old_unmatched_retained": 3722,
+    "combined": 35337,
+    "match_field": "GlobalID"
+  },
+  {
+    "layer": "rdck-cadastre",
+    "old": 54667,
+    "current": 50811,
+    "old_unmatched_retained": 10832,
+    "combined": 61643,
+    "match_field": "PID"
+  },
+  {
+    "layer": "rdkb-address-points",
+    "old": 12855,
+    "current": 12881,
+    "old_unmatched_retained": 2,
+    "combined": 12883,
+    "match_field": "OBJECTID_1"
+  },
+  {
+    "layer": "rdkb-parcels",
+    "old": 33431,
+    "current": 33480,
+    "old_unmatched_retained": 75,
+    "combined": 33555,
+    "match_field": "GlobalID"
+  },
+  {
+    "layer": "rdkb-property-search",
+    "old": 37416,
+    "current": 37659,
+    "old_unmatched_retained": 104,
+    "combined": 37763,
+    "match_field": [
+      "PMBCParcelGUID",
+      "AddressID",
+      "Folio"
+    ]
+  }
+]

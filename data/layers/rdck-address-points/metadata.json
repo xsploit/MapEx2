@@ -1,0 +1,796 @@
+{
+  "layerKey": "rdck-address-points",
+  "label": "RDCK Address Points",
+  "url": "https://maps.rdck.bc.ca/server2/rest/services/RDCK_Public_Web_Map_Service_MIL/MapServer/20",
+  "exportedAt": "2026-11-05T21:40:17.767367+00:00",
+  "availableCount": 35337,
+  "exportedCount": 35337,
+  "objectIdField": "OBJECTID",
+  "geometryType": "esriGeometryPoint",
+  "sourceType": "arcgis",
+  "outputFormat": "geojson",
+  "precision": 6,
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "domain": null
+    },
+    {
+      "name": "FOLIO",
+      "type": "esriFieldTypeString",
+      "alias": "Folio",
+      "length": 25,
+      "domain": null
+    },
+    {
+      "name": "ADDRESS",
+      "type": "esriFieldTypeString",
+      "alias": "Address",
+      "length": 50,
+      "domain": null
+    },
+    {
+      "name": "SUITE",
+      "type": "esriFieldTypeString",
+      "alias": "Suite/Unit",
+      "length": 5,
+      "domain": null
+    },
+    {
+      "name": "STREETNO",
+      "type": "esriFieldTypeInteger",
+      "alias": "Number",
+      "domain": null
+    },
+    {
+      "name": "HOUSEFUF",
+      "type": "esriFieldTypeString",
+      "alias": "House Suffix",
+      "length": 5,
+      "domain": null
+    },
+    {
+      "name": "PREFIX",
+      "type": "esriFieldTypeString",
+      "alias": "Prefix",
+      "length": 2,
+      "domain": null
+    },
+    {
+      "name": "STRNAME",
+      "type": "esriFieldTypeString",
+      "alias": "Street Name",
+      "length": 30,
+      "domain": null
+    },
+    {
+      "name": "STRTYPE",
+      "type": "esriFieldTypeString",
+      "alias": "Street Type",
+      "length": 10,
+      "domain": {
+        "type": "codedValue",
+        "name": "DomainStreetType",
+        "description": "Domain used to assign street type to AddressPoints and Streets datasets",
+        "codedValues": [
+          {
+            "name": "AVE",
+            "code": "AVE"
+          },
+          {
+            "name": "BEND",
+            "code": "BEND"
+          },
+          {
+            "name": "BLVD",
+            "code": "BLVD"
+          },
+          {
+            "name": "CRES",
+            "code": "CRES"
+          },
+          {
+            "name": "CRT",
+            "code": "CRT"
+          },
+          {
+            "name": "DR",
+            "code": "DR"
+          },
+          {
+            "name": "FSR",
+            "code": "FSR"
+          },
+          {
+            "name": "HWY",
+            "code": "HWY"
+          },
+          {
+            "name": "LANE",
+            "code": "LANE"
+          },
+          {
+            "name": "PL",
+            "code": "PL"
+          },
+          {
+            "name": "RD",
+            "code": "RD"
+          },
+          {
+            "name": "ST",
+            "code": "ST"
+          },
+          {
+            "name": "TRL",
+            "code": "TRL"
+          },
+          {
+            "name": "WAY",
+            "code": "WAY"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "SUFFIX",
+      "type": "esriFieldTypeString",
+      "alias": "Suffix",
+      "length": 2,
+      "domain": null
+    },
+    {
+      "name": "COMM",
+      "type": "esriFieldTypeString",
+      "alias": "Community",
+      "length": 50,
+      "domain": {
+        "type": "codedValue",
+        "name": "DomainCommunityNames",
+        "description": "Domain used to assign community names for AddressPoints and Streets, these match the Community names in the DRA",
+        "codedValues": [
+          {
+            "name": "Ainsworth Hot Springs",
+            "code": "Ainsworth Hot Springs"
+          },
+          {
+            "name": "Appledale",
+            "code": "Appledale"
+          },
+          {
+            "name": "Argenta",
+            "code": "Argenta"
+          },
+          {
+            "name": "Arrow Park",
+            "code": "Arrow Park"
+          },
+          {
+            "name": "Balfour",
+            "code": "Balfour"
+          },
+          {
+            "name": "Beasley",
+            "code": "Beasley"
+          },
+          {
+            "name": "Blewett",
+            "code": "Blewett"
+          },
+          {
+            "name": "Blueberry Creek",
+            "code": "Blueberry Creek"
+          },
+          {
+            "name": "Boswell",
+            "code": "Boswell"
+          },
+          {
+            "name": "Brilliant",
+            "code": "Brilliant"
+          },
+          {
+            "name": "Burton",
+            "code": "Burton"
+          },
+          {
+            "name": "Castlegar",
+            "code": "Castlegar"
+          },
+          {
+            "name": "Cooper Creek",
+            "code": "Cooper Creek"
+          },
+          {
+            "name": "Crawford Bay",
+            "code": "Crawford Bay"
+          },
+          {
+            "name": "Crescent Valley",
+            "code": "Crescent Valley"
+          },
+          {
+            "name": "Creston",
+            "code": "Creston"
+          },
+          {
+            "name": "Edgewood",
+            "code": "Edgewood"
+          },
+          {
+            "name": "Erickson",
+            "code": "Erickson"
+          },
+          {
+            "name": "Erie",
+            "code": "Erie"
+          },
+          {
+            "name": "Fauquier",
+            "code": "Fauquier"
+          },
+          {
+            "name": "Glade",
+            "code": "Glade"
+          },
+          {
+            "name": "Gray Creek",
+            "code": "Gray Creek"
+          },
+          {
+            "name": "Harrop",
+            "code": "Harrop"
+          },
+          {
+            "name": "Hills",
+            "code": "Hills"
+          },
+          {
+            "name": "Howser",
+            "code": "Howser"
+          },
+          {
+            "name": "Kaslo",
+            "code": "Kaslo"
+          },
+          {
+            "name": "Kingsgate",
+            "code": "Kingsgate"
+          },
+          {
+            "name": "Kitchener",
+            "code": "Kitchener"
+          },
+          {
+            "name": "Kootenay Bay",
+            "code": "Kootenay Bay"
+          },
+          {
+            "name": "Kootenay Pass",
+            "code": "Kootenay Pass"
+          },
+          {
+            "name": "Krestova",
+            "code": "Krestova"
+          },
+          {
+            "name": "Lardeau",
+            "code": "Lardeau"
+          },
+          {
+            "name": "Lister",
+            "code": "Lister"
+          },
+          {
+            "name": "Lower Arrow",
+            "code": "Lower Arrow"
+          },
+          {
+            "name": "Meadow Creek",
+            "code": "Meadow Creek"
+          },
+          {
+            "name": "Mirror Lake",
+            "code": "Mirror Lake"
+          },
+          {
+            "name": "Nakusp",
+            "code": "Nakusp"
+          },
+          {
+            "name": "Needles",
+            "code": "Needles"
+          },
+          {
+            "name": "Nelson",
+            "code": "Nelson"
+          },
+          {
+            "name": "Nelway",
+            "code": "Nelway"
+          },
+          {
+            "name": "New Denver",
+            "code": "New Denver"
+          },
+          {
+            "name": "North Shore",
+            "code": "North Shore"
+          },
+          {
+            "name": "Ootischenia",
+            "code": "Ootischenia"
+          },
+          {
+            "name": "Pass Creek",
+            "code": "Pass Creek"
+          },
+          {
+            "name": "Passmore",
+            "code": "Passmore"
+          },
+          {
+            "name": "Perry Siding",
+            "code": "Perry Siding"
+          },
+          {
+            "name": "Procter",
+            "code": "Procter"
+          },
+          {
+            "name": "Queens Bay",
+            "code": "Queens Bay"
+          },
+          {
+            "name": "Raspberry",
+            "code": "Raspberry"
+          },
+          {
+            "name": "Riondel",
+            "code": "Riondel"
+          },
+          {
+            "name": "Robson",
+            "code": "Robson"
+          },
+          {
+            "name": "Rosebery",
+            "code": "Rosebery"
+          },
+          {
+            "name": "Salmo",
+            "code": "Salmo"
+          },
+          {
+            "name": "Sanca",
+            "code": "Sanca"
+          },
+          {
+            "name": "Shoreacres",
+            "code": "Shoreacres"
+          },
+          {
+            "name": "Shutty Bench",
+            "code": "Shutty Bench"
+          },
+          {
+            "name": "Silverton",
+            "code": "Silverton"
+          },
+          {
+            "name": "Sirdar",
+            "code": "Sirdar"
+          },
+          {
+            "name": "Slocan",
+            "code": "Slocan"
+          },
+          {
+            "name": "Slocan Park",
+            "code": "Slocan Park"
+          },
+          {
+            "name": "South Slocan",
+            "code": "South Slocan"
+          },
+          {
+            "name": "Taghum",
+            "code": "Taghum"
+          },
+          {
+            "name": "Tarrys",
+            "code": "Tarrys"
+          },
+          {
+            "name": "Thrums",
+            "code": "Thrums"
+          },
+          {
+            "name": "Vallican",
+            "code": "Vallican"
+          },
+          {
+            "name": "Winlaw",
+            "code": "Winlaw"
+          },
+          {
+            "name": "Wynndel",
+            "code": "Wynndel"
+          },
+          {
+            "name": "Yahk",
+            "code": "Yahk"
+          },
+          {
+            "name": "Ymir",
+            "code": "Ymir"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "PROV",
+      "type": "esriFieldTypeString",
+      "alias": "Province",
+      "length": 2,
+      "domain": null
+    },
+    {
+      "name": "EDIT_DATE",
+      "type": "esriFieldTypeDate",
+      "alias": "EDIT DATE",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "EDIT_CMNTS",
+      "type": "esriFieldTypeString",
+      "alias": "EDIT COMMENTS",
+      "length": 255,
+      "domain": null
+    },
+    {
+      "name": "FDMID",
+      "type": "esriFieldTypeInteger",
+      "alias": "FDMID",
+      "domain": null
+    },
+    {
+      "name": "GlobalID",
+      "type": "esriFieldTypeGlobalID",
+      "alias": "GlobalID",
+      "length": 38,
+      "domain": null
+    },
+    {
+      "name": "created_user",
+      "type": "esriFieldTypeString",
+      "alias": "created_user",
+      "length": 255,
+      "domain": null
+    },
+    {
+      "name": "created_date",
+      "type": "esriFieldTypeDate",
+      "alias": "created_date",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "last_edited_user",
+      "type": "esriFieldTypeString",
+      "alias": "last_edited_user",
+      "length": 255,
+      "domain": null
+    },
+    {
+      "name": "last_edited_date",
+      "type": "esriFieldTypeDate",
+      "alias": "Last Edit Date",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "Shape",
+      "type": "esriFieldTypeGeometry",
+      "alias": "Shape",
+      "domain": null
+    }
+  ],
+  "parts": [
+    {
+      "file": "part-0001.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0002.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0003.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0004.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0005.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0006.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0007.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0008.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0009.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0010.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0011.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0012.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0013.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0014.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0015.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0016.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0017.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0018.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0019.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0020.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0021.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0022.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0023.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0024.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0025.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0026.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0027.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0028.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0029.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0030.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0031.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0032.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0033.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0034.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0035.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0036.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0037.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0038.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0039.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0040.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0041.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0042.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0043.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0044.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0045.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0046.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0047.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0048.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0049.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0050.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0051.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0052.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0053.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0054.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0055.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0056.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0057.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0058.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0059.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0060.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0061.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0062.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0063.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0064.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0065.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0066.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0067.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0068.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0069.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0070.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0071.geojson",
+      "count": 337
+    }
+  ],
+  "note": "Current 2026-11-05T21:40:17.767367+00:00 plus unmatched historical 2026-03-31T09:59:31.609Z; historical features may be stale.",
+  "historicalExportedAt": "2026-03-31T09:59:31.609Z",
+  "currentSourceCount": 31615,
+  "historicalRetainedCount": 3722
+}

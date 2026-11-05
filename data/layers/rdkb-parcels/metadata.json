@@ -1,0 +1,1674 @@
+{
+  "layerKey": "rdkb-parcels",
+  "label": "RDKB PMBC Parcels",
+  "url": "https://mapping.rdkb.com/server/rest/services/Planning/BaseLayersExternal/MapServer/253",
+  "exportedAt": "2026-11-05T21:50:03.913424+00:00",
+  "availableCount": 33555,
+  "exportedCount": 33555,
+  "objectIdField": "OBJECTID",
+  "geometryType": "esriGeometryPolygon",
+  "sourceType": "arcgis",
+  "outputFormat": "geojson",
+  "precision": 6,
+  "fields": [
+    {
+      "name": "GlobalID",
+      "type": "esriFieldTypeGlobalID",
+      "alias": "GlobalID",
+      "length": 38,
+      "domain": null
+    },
+    {
+      "name": "Name",
+      "type": "esriFieldTypeString",
+      "alias": "Name",
+      "length": 50,
+      "domain": null
+    },
+    {
+      "name": "PlanID",
+      "type": "esriFieldTypeGUID",
+      "alias": "PlanID",
+      "length": 38,
+      "domain": null
+    },
+    {
+      "name": "PlanNumber",
+      "type": "esriFieldTypeString",
+      "alias": "Plan Number",
+      "length": 128,
+      "domain": null
+    },
+    {
+      "name": "PIN",
+      "type": "esriFieldTypeInteger",
+      "alias": "PIN",
+      "domain": null
+    },
+    {
+      "name": "PID",
+      "type": "esriFieldTypeInteger",
+      "alias": "PID",
+      "domain": null
+    },
+    {
+      "name": "Designation1",
+      "type": "esriFieldTypeString",
+      "alias": "Designation1",
+      "length": 30,
+      "domain": null
+    },
+    {
+      "name": "Designation2",
+      "type": "esriFieldTypeString",
+      "alias": "Designation2",
+      "length": 30,
+      "domain": null
+    },
+    {
+      "name": "Designation3",
+      "type": "esriFieldTypeString",
+      "alias": "Designation3",
+      "length": 30,
+      "domain": null
+    },
+    {
+      "name": "ParcelStatus",
+      "type": "esriFieldTypeString",
+      "alias": "Parcel Status",
+      "length": 20,
+      "domain": {
+        "type": "codedValue",
+        "name": "PMBC_ParcelStatus",
+        "description": "Status of this parcel record in the land title register or Crown land registry.",
+        "codedValues": [
+          {
+            "name": "There is an active title for the parcel",
+            "code": "ACTIVE"
+          },
+          {
+            "name": "The parcel has been cancelled by the Crown",
+            "code": "CANCELLED"
+          },
+          {
+            "name": "There is no longer an active title for the parcel",
+            "code": "INACTIVE"
+          },
+          {
+            "name": "Parcel status is unknown",
+            "code": "UNKNOWN"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "RegionalDistrict",
+      "type": "esriFieldTypeString",
+      "alias": "Regional District",
+      "length": 50,
+      "domain": {
+        "type": "codedValue",
+        "name": "PMBC_RegionalDistrict",
+        "description": "Regional District within which the parcel is located.",
+        "codedValues": [
+          {
+            "name": "Regional District of Bulkley-Nechako",
+            "code": "0001"
+          },
+          {
+            "name": "Cariboo Regional District",
+            "code": "0002"
+          },
+          {
+            "name": "Central Coast Regional District",
+            "code": "0003"
+          },
+          {
+            "name": "Regional District of Central Kootenay",
+            "code": "0004"
+          },
+          {
+            "name": "Captial Regional District",
+            "code": "0005"
+          },
+          {
+            "name": "Columiba-Shuswap Regional District",
+            "code": "0006"
+          },
+          {
+            "name": "Cowichan Valley Regional District",
+            "code": "0007"
+          },
+          {
+            "name": "Regional District of Fraser-Fort George",
+            "code": "0008"
+          },
+          {
+            "name": "Fraser Valley Regional District",
+            "code": "0009"
+          },
+          {
+            "name": "Greater Vancouver Regional District",
+            "code": "0010"
+          },
+          {
+            "name": "Regional District of Kitimat-Stikine",
+            "code": "0011"
+          },
+          {
+            "name": "Regional District of North Okanagan",
+            "code": "0012"
+          },
+          {
+            "name": "Northern Rockies Regional Municipality",
+            "code": "0013"
+          },
+          {
+            "name": "Powell River Regional District",
+            "code": "0014"
+          },
+          {
+            "name": "Peace River Regional District",
+            "code": "0015"
+          },
+          {
+            "name": "Regional District of Central Okanagan",
+            "code": "0016"
+          },
+          {
+            "name": "Comox Valley Regional District",
+            "code": "0017"
+          },
+          {
+            "name": "Regional District of East Kootenay",
+            "code": "0018"
+          },
+          {
+            "name": "Regional District of Kootenay Boundary",
+            "code": "0019"
+          },
+          {
+            "name": "Regional District of Mount Waddington",
+            "code": "0020"
+          },
+          {
+            "name": "Regional District of Nanaimo",
+            "code": "0021"
+          },
+          {
+            "name": "Regional District of Okanagan-Similkameen",
+            "code": "0022"
+          },
+          {
+            "name": "Sunshine Coast Regional District",
+            "code": "0023"
+          },
+          {
+            "name": "Stikine Region",
+            "code": "0024"
+          },
+          {
+            "name": "Squamish-Lillooet Regional District",
+            "code": "0025"
+          },
+          {
+            "name": "Skeena-Queen Charlotte Regional District",
+            "code": "0026"
+          },
+          {
+            "name": "Strathcona Regional District",
+            "code": "0027"
+          },
+          {
+            "name": "Thompson-Nicola Regional District",
+            "code": "0028"
+          },
+          {
+            "name": "Regional District of Alberni-Clayoquot",
+            "code": "0029"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "ParcelClass",
+      "type": "esriFieldTypeString",
+      "alias": "Parcel Class",
+      "length": 50,
+      "domain": {
+        "type": "codedValue",
+        "name": "PMBC_ParcelClass",
+        "description": "Parcel classification defining the type of parcel record, indicating statutory origin and expected attribute signature for the survey parcel.",
+        "codedValues": [
+          {
+            "name": "Bare Land Strata",
+            "code": "BARE LAND STRATA"
+          },
+          {
+            "name": "Subdivision",
+            "code": "SUBDIVISION"
+          },
+          {
+            "name": "Building Strata",
+            "code": "BUILDING STRATA"
+          },
+          {
+            "name": "Park",
+            "code": "PARK"
+          },
+          {
+            "name": "Highway",
+            "code": "HIGHWAY"
+          },
+          {
+            "name": "Air Space",
+            "code": "AIR SPACE"
+          },
+          {
+            "name": "Primary parcel or District Lot",
+            "code": "PRIMARY"
+          },
+          {
+            "name": "Interest",
+            "code": "INTEREST"
+          },
+          {
+            "name": "Road",
+            "code": "ROAD"
+          },
+          {
+            "name": "Parcel of titled land where ownership is jointly held by surrounding titles",
+            "code": "COMMON OWNERSHIP"
+          },
+          {
+            "name": "Portion of a primary that falls outside of a titled parcel or crown subdivision",
+            "code": "PART OF PRIMARY"
+          },
+          {
+            "name": "Absolute Fee Book",
+            "code": "ABSOLUTE FEE BOOK"
+          },
+          {
+            "name": "Crown Subdivision",
+            "code": "CROWNSUBDIVISION"
+          },
+          {
+            "name": "Surveyed Measurement",
+            "code": "SURVEYED MEASUREMENT"
+          },
+          {
+            "name": "Frontage",
+            "code": "FRONTAGE"
+          },
+          {
+            "name": "Land returned to untitled Crown land generally due to erosion of natural boundary",
+            "code": "RETURN TO CROWN"
+          },
+          {
+            "name": "Other (see comments)",
+            "code": "OTHER"
+          },
+          {
+            "name": "Parcel class is unknown",
+            "code": "UNKNOWN"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "SourceParcelID",
+      "type": "esriFieldTypeString",
+      "alias": "Source Parcel ID",
+      "length": 50,
+      "domain": null
+    },
+    {
+      "name": "GeometrySource",
+      "type": "esriFieldTypeString",
+      "alias": "GeometrySource",
+      "length": 50,
+      "domain": {
+        "type": "codedValue",
+        "name": "PMBC_GeometrySource",
+        "description": "The source of the parcel\u00e2\u20ac\u2122s geometry/shape.",
+        "codedValues": [
+          {
+            "name": "Tantalis data used to record rights, interests and encumbrances on Crown land under the legislative requirements of the Land Act",
+            "code": "TANTALIS"
+          },
+          {
+            "name": "Integrated Cadastral Information Society data",
+            "code": "ICIS CADASTRE"
+          },
+          {
+            "name": "Dataset cogo\u00e2\u20ac\u2122ed by PMBC Operations",
+            "code": "PMBC-OPERATIONS"
+          },
+          {
+            "name": "Integrated Cadastral Fabric data",
+            "code": "ICF"
+          },
+          {
+            "name": "Integrated Cadastral Fabric data modified data",
+            "code": "MODIFIED-ICF"
+          },
+          {
+            "name": "Integrated Cadastral Information Society data modified",
+            "code": "MODIFIED-ICIS"
+          },
+          {
+            "name": "Data delivered from PMBC compilation",
+            "code": "PMBC-COMPILATION"
+          },
+          {
+            "name": "TANTALIS modified data",
+            "code": "MODIFIED-TANTALIS"
+          },
+          {
+            "name": "Natural Resources Canada data",
+            "code": "NRCAN"
+          },
+          {
+            "name": "NR Canada data modified",
+            "code": "MODIFIED-NRCAN"
+          },
+          {
+            "name": "Dataset from Survey Plan Submission",
+            "code": "SPDS"
+          },
+          {
+            "name": "Integrated as part of the SRW Compilation project",
+            "code": "SRW-COMPILATION"
+          },
+          {
+            "name": "Integrated from data delivered from a Local Government source",
+            "code": "LOCAL-GOVERNMENT"
+          },
+          {
+            "name": "Integrated from modified data delivered from a Local Government source",
+            "code": "MODIFIED-LOCAL-GOVERNMENT"
+          },
+          {
+            "name": "Regional District of Kootenay Boundary",
+            "code": "RDKB"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "IsRemainder",
+      "type": "esriFieldTypeString",
+      "alias": "IsRemainder",
+      "length": 3,
+      "domain": {
+        "type": "codedValue",
+        "name": "CPDM_YesNo",
+        "description": "",
+        "codedValues": [
+          {
+            "name": "NO",
+            "code": "NO"
+          },
+          {
+            "name": "YES",
+            "code": "YES"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "ParcelStartDate",
+      "type": "esriFieldTypeDate",
+      "alias": "ParcelStartDate",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "PositionalError",
+      "type": "esriFieldTypeDouble",
+      "alias": "PositionalError",
+      "domain": null
+    },
+    {
+      "name": "LegalDescription",
+      "type": "esriFieldTypeString",
+      "alias": "Legal Description",
+      "length": 2000,
+      "domain": null
+    },
+    {
+      "name": "CaptureMethod",
+      "type": "esriFieldTypeString",
+      "alias": "CaptureMethod",
+      "length": 50,
+      "domain": {
+        "type": "codedValue",
+        "name": "PMBC_CaptureMethod",
+        "description": "The source of the parcel\u00e2\u20ac\u2122s boundary dimensions.",
+        "codedValues": [
+          {
+            "name": "Coordinate Geometry, parcels integrated via non-survey plan dataset submission",
+            "code": "COGO"
+          },
+          {
+            "name": "There is no record to trace the origin of the parcel",
+            "code": "UNKNOWN"
+          },
+          {
+            "name": "Parcel integrated through Survey Plan Dataset submission",
+            "code": "SPDS"
+          },
+          {
+            "name": "Parcel cogo\u00e2\u20ac\u2122ed prior to delivery at LTSA",
+            "code": "COGO IN SOURCE"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "OwnerType",
+      "type": "esriFieldTypeString",
+      "alias": "Owner Type",
+      "length": 50,
+      "domain": {
+        "type": "codedValue",
+        "name": "PMBC_OwnerType",
+        "description": "Generalized ownership type classification based on registration of title for the parcel.",
+        "codedValues": [
+          {
+            "name": "Title registered to the Crown",
+            "code": "CROWN PROVINCIAL"
+          },
+          {
+            "name": "The parcel has a title registered to a local government or a school district or trustee.",
+            "code": "LOCAL GOVERNMENT"
+          },
+          {
+            "name": "Title registered to an Individual or a Private Corporation / Institution",
+            "code": "PRIVATE"
+          },
+          {
+            "name": "Title registered to the Federal government or a Federal Crown agency",
+            "code": "FEDERAL"
+          },
+          {
+            "name": "title registered to a local government or a school district or trustee.",
+            "code": "MUNICIPAL"
+          },
+          {
+            "name": "Title registered to a First Nations group",
+            "code": "FIRST NATIONS"
+          },
+          {
+            "name": "Title registered to a Crown Agency or a Crown Corporation",
+            "code": "CROWN AGENCY"
+          },
+          {
+            "name": "Title registered to a mix of different types of owners.",
+            "code": "MIXED OWNERSHIP"
+          },
+          {
+            "name": "Parcel does not have an active title",
+            "code": "UNTITLEDPROV"
+          },
+          {
+            "name": "None",
+            "code": "NONE"
+          },
+          {
+            "name": "Unclassified",
+            "code": "UNCLASS"
+          },
+          {
+            "name": "Ownership Type is unknown",
+            "code": "UNKNOWN"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "Compiled",
+      "type": "esriFieldTypeInteger",
+      "alias": "Compiled",
+      "domain": null
+    },
+    {
+      "name": "CreatedDate",
+      "type": "esriFieldTypeDate",
+      "alias": "CreatedDate",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "ModifiedDate",
+      "type": "esriFieldTypeDate",
+      "alias": "ModifiedDate",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "StatedArea",
+      "type": "esriFieldTypeString",
+      "alias": "StatedArea",
+      "length": 50,
+      "domain": null
+    },
+    {
+      "name": "ErrorReportedBy",
+      "type": "esriFieldTypeString",
+      "alias": "ErrorReportedBy",
+      "length": 50,
+      "domain": {
+        "type": "codedValue",
+        "name": "PMBC_ErrorReportedBy",
+        "description": "Defines which process computed the Positional Error value.",
+        "codedValues": [
+          {
+            "name": "Reported after a Least Squares Adjustment has been completed",
+            "code": "LSA"
+          },
+          {
+            "name": "Reported during fabric compilation prior to LTSA delivery",
+            "code": "DATACOMPILATION"
+          },
+          {
+            "name": "Reported during integration of parcels by fabric technicians",
+            "code": "PMBC-OPERATIONS"
+          },
+          {
+            "name": "This indicates that the adjustment was executed in ArcGIS Pro.",
+            "code": "WEIGHTED LSA"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "Municipality",
+      "type": "esriFieldTypeString",
+      "alias": "Municipality",
+      "length": 255,
+      "domain": {
+        "type": "codedValue",
+        "name": "PMBC_Municipality",
+        "description": "Incorporated Municipality within which the parcel is located.",
+        "codedValues": [
+          {
+            "name": "100 Mile House, District of",
+            "code": "0001"
+          },
+          {
+            "name": "Abbotsford, City of",
+            "code": "0002"
+          },
+          {
+            "name": "Alert Bay, The Corporation of the Village of",
+            "code": "0003"
+          },
+          {
+            "name": "Anmore, Village of",
+            "code": "0004"
+          },
+          {
+            "name": "Armstrong, City of",
+            "code": "0005"
+          },
+          {
+            "name": "Ashcroft, The Corporation of the Village of",
+            "code": "0006"
+          },
+          {
+            "name": "Barriere, District of",
+            "code": "0007"
+          },
+          {
+            "name": "Belcarra, Village of",
+            "code": "0008"
+          },
+          {
+            "name": "Bowen Island, Municipality",
+            "code": "0009"
+          },
+          {
+            "name": "Burnaby, City of",
+            "code": "0010"
+          },
+          {
+            "name": "Burns Lake, The Corporation of the Village of",
+            "code": "0011"
+          },
+          {
+            "name": "Cache Creek, Village of",
+            "code": "0012"
+          },
+          {
+            "name": "Campbell River, City of",
+            "code": "0013"
+          },
+          {
+            "name": "Canal Flats, Village of",
+            "code": "0014"
+          },
+          {
+            "name": "Castlegar, City of",
+            "code": "0015"
+          },
+          {
+            "name": "Central Saanich, The Corporation of the District of",
+            "code": "0016"
+          },
+          {
+            "name": "Chase, Village of",
+            "code": "0017"
+          },
+          {
+            "name": "Chetwynd, District of",
+            "code": "0018"
+          },
+          {
+            "name": "Chilliwack, City of",
+            "code": "0019"
+          },
+          {
+            "name": "Clearwater, District of",
+            "code": "0020"
+          },
+          {
+            "name": "Clinton, Village of",
+            "code": "0021"
+          },
+          {
+            "name": "Coldstream, The Corporation of the District of",
+            "code": "0022"
+          },
+          {
+            "name": "Colwood, City of",
+            "code": "0023"
+          },
+          {
+            "name": "Comox, Town of",
+            "code": "0024"
+          },
+          {
+            "name": "Coquitlam, City of",
+            "code": "0025"
+          },
+          {
+            "name": "Courtenay, The Corporation of the City of",
+            "code": "0026"
+          },
+          {
+            "name": "Cranbrook, The Corporation of the City of",
+            "code": "0027"
+          },
+          {
+            "name": "Creston, Town of",
+            "code": "0028"
+          },
+          {
+            "name": "Cumberland, The Corporation of the Village of",
+            "code": "0029"
+          },
+          {
+            "name": "Dawson Creek, The Corporation of the City of",
+            "code": "0030"
+          },
+          {
+            "name": "Delta, The Corporation of",
+            "code": "0031"
+          },
+          {
+            "name": "Duncan, The Corporation of the City of",
+            "code": "0032"
+          },
+          {
+            "name": "Elkford, District of",
+            "code": "0033"
+          },
+          {
+            "name": "Enderby, The Corporation of the City of",
+            "code": "0034"
+          },
+          {
+            "name": "Esquimalt, Corporation of the Township of",
+            "code": "0035"
+          },
+          {
+            "name": "Fernie, The Corporation of the City of",
+            "code": "0036"
+          },
+          {
+            "name": "Fort St. James, District of",
+            "code": "0037"
+          },
+          {
+            "name": "Fort St. John, City of",
+            "code": "0038"
+          },
+          {
+            "name": "Fraser Lake, Village of",
+            "code": "0039"
+          },
+          {
+            "name": "Fruitvale, The Corporation of the Village of",
+            "code": "0040"
+          },
+          {
+            "name": "Gibsons, Town of",
+            "code": "0041"
+          },
+          {
+            "name": "Gold River, Village of",
+            "code": "0042"
+          },
+          {
+            "name": "Golden, Town of",
+            "code": "0043"
+          },
+          {
+            "name": "Grand Forks, The Corporation of the City of",
+            "code": "0044"
+          },
+          {
+            "name": "Granisle, Village of",
+            "code": "0045"
+          },
+          {
+            "name": "Greenwood, The Corporation of the City of",
+            "code": "0046"
+          },
+          {
+            "name": "Harrison Hot Springs, Village of",
+            "code": "0047"
+          },
+          {
+            "name": "Hazelton, The Corporation of the Village of",
+            "code": "0048"
+          },
+          {
+            "name": "Highlands, District of",
+            "code": "0049"
+          },
+          {
+            "name": "Hope, District of",
+            "code": "0050"
+          },
+          {
+            "name": "Houston, District of",
+            "code": "0051"
+          },
+          {
+            "name": "Hudson's Hope, District of",
+            "code": "0052"
+          },
+          {
+            "name": "Invermere, District of",
+            "code": "0053"
+          },
+          {
+            "name": "Jumbo Glacier, Mountain Resort Municipality",
+            "code": "0054"
+          },
+          {
+            "name": "Kamloops, City of",
+            "code": "0055"
+          },
+          {
+            "name": "Kaslo, Village of",
+            "code": "0056"
+          },
+          {
+            "name": "Kelowna, City of",
+            "code": "0057"
+          },
+          {
+            "name": "Kent, The Corporation of the District of",
+            "code": "0058"
+          },
+          {
+            "name": "Keremeos, The Corporation of the Village of",
+            "code": "0059"
+          },
+          {
+            "name": "Kimberley, City of",
+            "code": "0060"
+          },
+          {
+            "name": "Kitimat, District of",
+            "code": "0061"
+          },
+          {
+            "name": "Ladysmith, Town of",
+            "code": "0062"
+          },
+          {
+            "name": "Lake Country, District of",
+            "code": "0063"
+          },
+          {
+            "name": "Lake Cowichan, Town of",
+            "code": "0064"
+          },
+          {
+            "name": "Langford, City of",
+            "code": "0065"
+          },
+          {
+            "name": "Langley, City of",
+            "code": "0066"
+          },
+          {
+            "name": "Langley, The Corporation of the Township of",
+            "code": "0067"
+          },
+          {
+            "name": "Lantzville, District of",
+            "code": "0068"
+          },
+          {
+            "name": "Lillooet, District of",
+            "code": "0069"
+          },
+          {
+            "name": "Lions Bay, Village of",
+            "code": "0070"
+          },
+          {
+            "name": "Logan Lake, District of",
+            "code": "0071"
+          },
+          {
+            "name": "Lumby, The Corporation of the Village of",
+            "code": "0072"
+          },
+          {
+            "name": "Lytton, The Corporation of the Village of",
+            "code": "0073"
+          },
+          {
+            "name": "Mackenzie, District of",
+            "code": "0074"
+          },
+          {
+            "name": "Maple Ridge, The Corporation of the District of",
+            "code": "0075"
+          },
+          {
+            "name": "Masset, Village of",
+            "code": "0076"
+          },
+          {
+            "name": "McBride, The Corporation of the Village of",
+            "code": "0077"
+          },
+          {
+            "name": "Merritt, City of",
+            "code": "0078"
+          },
+          {
+            "name": "Metchosin, District of",
+            "code": "0079"
+          },
+          {
+            "name": "Midway, Village of",
+            "code": "0080"
+          },
+          {
+            "name": "Mission, District of",
+            "code": "0081"
+          },
+          {
+            "name": "Montrose, The Corporation of the Village of",
+            "code": "0082"
+          },
+          {
+            "name": "Nakusp, Village of",
+            "code": "0083"
+          },
+          {
+            "name": "Nanaimo, City of",
+            "code": "0084"
+          },
+          {
+            "name": "Nelson, The Corporation of the City of",
+            "code": "0085"
+          },
+          {
+            "name": "New Denver, The Corporation of the Village of",
+            "code": "0086"
+          },
+          {
+            "name": "New Hazelton, District of",
+            "code": "0087"
+          },
+          {
+            "name": "New Westminster, The Corporation of the City of",
+            "code": "0088"
+          },
+          {
+            "name": "North Cowichan, The Corporation of the District of",
+            "code": "0089"
+          },
+          {
+            "name": "North Saanich, District of",
+            "code": "0090"
+          },
+          {
+            "name": "North Vancouver, The Corporation of the City of",
+            "code": "0091"
+          },
+          {
+            "name": "North Vancouver, The Corporation of the District of",
+            "code": "0092"
+          },
+          {
+            "name": "Northern Rockies Regional Municipality",
+            "code": "0093"
+          },
+          {
+            "name": "Oak Bay, The Corporation of the District of",
+            "code": "0094"
+          },
+          {
+            "name": "Oliver, Town of",
+            "code": "0095"
+          },
+          {
+            "name": "Osoyoos, Town of",
+            "code": "0096"
+          },
+          {
+            "name": "Parksville, City of",
+            "code": "0097"
+          },
+          {
+            "name": "Peachland, The Corporation of the District of",
+            "code": "0098"
+          },
+          {
+            "name": "Pemberton, Village of",
+            "code": "0099"
+          },
+          {
+            "name": "Penticton, The Corporation of the City of",
+            "code": "0100"
+          },
+          {
+            "name": "Pitt Meadows, City of",
+            "code": "0101"
+          },
+          {
+            "name": "Port Alberni, City of",
+            "code": "0102"
+          },
+          {
+            "name": "Port Alice, Village of",
+            "code": "0103"
+          },
+          {
+            "name": "Port Clements, Village of",
+            "code": "0104"
+          },
+          {
+            "name": "Port Coquitlam, The Corporation of the City of",
+            "code": "0105"
+          },
+          {
+            "name": "Port Edward, District of",
+            "code": "0106"
+          },
+          {
+            "name": "Port Hardy, District of",
+            "code": "0107"
+          },
+          {
+            "name": "Port McNeill, Town of",
+            "code": "0108"
+          },
+          {
+            "name": "Port Moody, City of",
+            "code": "0109"
+          },
+          {
+            "name": "Pouce Coupe, The Corporation of the Village of",
+            "code": "0110"
+          },
+          {
+            "name": "Powell River, City of",
+            "code": "0111"
+          },
+          {
+            "name": "Prince George, City of",
+            "code": "0112"
+          },
+          {
+            "name": "Prince Rupert, City of",
+            "code": "0113"
+          },
+          {
+            "name": "Princeton, Town of",
+            "code": "0114"
+          },
+          {
+            "name": "Qualicum Beach, Town of",
+            "code": "0115"
+          },
+          {
+            "name": "Queen Charlotte, Village of",
+            "code": "0116"
+          },
+          {
+            "name": "Quesnel, City of",
+            "code": "0117"
+          },
+          {
+            "name": "Radium Hot Springs, Village of",
+            "code": "0118"
+          },
+          {
+            "name": "Revelstoke, City of",
+            "code": "0119"
+          },
+          {
+            "name": "Richmond, City of",
+            "code": "0120"
+          },
+          {
+            "name": "Rossland, The Corporation of the City of",
+            "code": "0121"
+          },
+          {
+            "name": "Saanich, The Corporation of the District of",
+            "code": "0122"
+          },
+          {
+            "name": "Salmo, The Corporation of the Village of",
+            "code": "0123"
+          },
+          {
+            "name": "Salmon Arm, City of",
+            "code": "0124"
+          },
+          {
+            "name": "Sayward, Village of",
+            "code": "0125"
+          },
+          {
+            "name": "Sechelt Indian Government, District",
+            "code": "0126"
+          },
+          {
+            "name": "Sechelt, District of",
+            "code": "0127"
+          },
+          {
+            "name": "Sicamous, District of",
+            "code": "0128"
+          },
+          {
+            "name": "Sidney, Town of",
+            "code": "0129"
+          },
+          {
+            "name": "Silverton, The Corporation of the Village of",
+            "code": "0130"
+          },
+          {
+            "name": "Slocan, Village of",
+            "code": "0131"
+          },
+          {
+            "name": "Smithers, Town of",
+            "code": "0132"
+          },
+          {
+            "name": "Sooke, District of",
+            "code": "0133"
+          },
+          {
+            "name": "Spallumcheen, The Corporation of the Township of",
+            "code": "0134"
+          },
+          {
+            "name": "Sparwood, District of",
+            "code": "0135"
+          },
+          {
+            "name": "Squamish, District of",
+            "code": "0136"
+          },
+          {
+            "name": "Stewart, District of",
+            "code": "0137"
+          },
+          {
+            "name": "Summerland, The Corporation of the District of",
+            "code": "0138"
+          },
+          {
+            "name": "Sun Peaks, Mountain Resort Municipality",
+            "code": "0139"
+          },
+          {
+            "name": "Surrey, City of",
+            "code": "0140"
+          },
+          {
+            "name": "Tahsis, Village of",
+            "code": "0141"
+          },
+          {
+            "name": "Taylor, District of",
+            "code": "0142"
+          },
+          {
+            "name": "Telkwa, The Corporation of the Village of",
+            "code": "0143"
+          },
+          {
+            "name": "Terrace, City of",
+            "code": "0144"
+          },
+          {
+            "name": "Tofino, District of",
+            "code": "0145"
+          },
+          {
+            "name": "Trail, City of",
+            "code": "0146"
+          },
+          {
+            "name": "Tumbler Ridge, District of",
+            "code": "0147"
+          },
+          {
+            "name": "Ucluelet, District of",
+            "code": "0148"
+          },
+          {
+            "name": "Valemount, Village of",
+            "code": "0149"
+          },
+          {
+            "name": "Vancouver, City of",
+            "code": "0150"
+          },
+          {
+            "name": "Vanderhoof, District of",
+            "code": "0151"
+          },
+          {
+            "name": "Vernon, The Corporation of the City of",
+            "code": "0152"
+          },
+          {
+            "name": "Victoria, The Corporation of the City of",
+            "code": "0153"
+          },
+          {
+            "name": "View Royal, Town of",
+            "code": "0154"
+          },
+          {
+            "name": "Warfield, The Corporation of the Village of",
+            "code": "0155"
+          },
+          {
+            "name": "Wells, District of",
+            "code": "0156"
+          },
+          {
+            "name": "West Kelowna, District of",
+            "code": "0157"
+          },
+          {
+            "name": "West Vancouver, The Corporation of the District of",
+            "code": "0158"
+          },
+          {
+            "name": "Whistler, Resort Municipality of",
+            "code": "0159"
+          },
+          {
+            "name": "White Rock, The Corporation of the City of",
+            "code": "0160"
+          },
+          {
+            "name": "Williams Lake, City of",
+            "code": "0161"
+          },
+          {
+            "name": "Zeballos, The Corporation of the Village of",
+            "code": "0162"
+          },
+          {
+            "name": "Rural",
+            "code": "0163"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "Shape",
+      "type": "esriFieldTypeGeometry",
+      "alias": "Shape",
+      "domain": null
+    },
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "domain": null
+    },
+    {
+      "name": "created_user",
+      "type": "esriFieldTypeString",
+      "alias": "created_user",
+      "length": 255,
+      "domain": null
+    },
+    {
+      "name": "created_date",
+      "type": "esriFieldTypeDate",
+      "alias": "created_date",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "last_edited_user",
+      "type": "esriFieldTypeString",
+      "alias": "last_edited_user",
+      "length": 255,
+      "domain": null
+    },
+    {
+      "name": "last_edited_date",
+      "type": "esriFieldTypeDate",
+      "alias": "last_edited_date",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "Shape.STArea()",
+      "type": "esriFieldTypeDouble",
+      "alias": "Shape.STArea()",
+      "domain": null
+    },
+    {
+      "name": "Shape.STLength()",
+      "type": "esriFieldTypeDouble",
+      "alias": "Shape.STLength()",
+      "domain": null
+    },
+    {
+      "name": "CommonName",
+      "type": "esriFieldTypeString",
+      "alias": "Common Name",
+      "length": 50,
+      "domain": null
+    },
+    {
+      "name": "SourceGlobalID",
+      "type": "esriFieldTypeGUID",
+      "alias": "Source Global ID",
+      "length": 38,
+      "domain": null
+    },
+    {
+      "name": "Comments",
+      "type": "esriFieldTypeString",
+      "alias": "Comments",
+      "length": 500,
+      "domain": null
+    },
+    {
+      "name": "UpdateStatus",
+      "type": "esriFieldTypeString",
+      "alias": "Record Update Status",
+      "length": 5,
+      "domain": {
+        "type": "codedValue",
+        "name": "PMBC_RecordUpdateStatus",
+        "description": "Record Update Status Values defining how a record is being updated / or reviewed",
+        "codedValues": [
+          {
+            "name": "Automatic",
+            "code": "AUTO"
+          },
+          {
+            "name": "Manual",
+            "code": "MANU"
+          },
+          {
+            "name": "Excluded",
+            "code": "EXCL"
+          },
+          {
+            "name": "Reviewed (Automatic)",
+            "code": "REVI"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "UpdateSource",
+      "type": "esriFieldTypeString",
+      "alias": "Record Update Source",
+      "length": 5,
+      "domain": {
+        "type": "codedValue",
+        "name": "PMBC_RecordSource",
+        "description": "",
+        "codedValues": [
+          {
+            "name": "ParcelMap BC Data",
+            "code": "PMBC"
+          },
+          {
+            "name": "Regional District of Kootenay Boundary",
+            "code": "RDKB"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    }
+  ],
+  "parts": [
+    {
+      "file": "part-0001.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0002.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0003.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0004.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0005.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0006.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0007.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0008.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0009.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0010.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0011.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0012.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0013.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0014.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0015.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0016.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0017.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0018.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0019.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0020.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0021.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0022.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0023.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0024.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0025.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0026.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0027.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0028.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0029.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0030.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0031.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0032.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0033.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0034.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0035.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0036.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0037.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0038.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0039.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0040.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0041.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0042.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0043.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0044.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0045.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0046.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0047.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0048.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0049.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0050.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0051.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0052.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0053.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0054.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0055.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0056.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0057.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0058.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0059.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0060.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0061.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0062.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0063.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0064.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0065.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0066.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0067.geojson",
+      "count": 500
+    },
+    {
+      "file": "part-0068.geojson",
+      "count": 55
+    }
+  ],
+  "note": "Current 2026-11-05T21:50:03.913424+00:00 plus unmatched historical 2026-03-31T09:55:18.963Z; historical features may be stale.",
+  "historicalExportedAt": "2026-03-31T09:55:18.963Z",
+  "currentSourceCount": 33480,
+  "historicalRetainedCount": 75
+}
